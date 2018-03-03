@@ -1,4 +1,4 @@
-{% set version = "2.1.1" %}
+{% set version = "2.1.2" %}
 
 package:
   name: pandoc
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-1-amd64.deb    # [linux64]
-  sha256: d53a5cea345b3ad6ecaab1f1867cbd0352b88df5df360e4ab00e24624fa56ae9                               # [linux64]
+  sha256: e8a5b53b01bc9c5b31da724e4bb33d3f1f72b080bff6204191096176a929c978
 
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.pkg      # [osx]
-  sha256: e45d9a770abb6c959bb209be5fc74ccb5020ddc276aab014f8ab319d42bb26cf                               # [osx]
+  sha256: e8a5b53b01bc9c5b31da724e4bb33d3f1f72b080bff6204191096176a929c978
 
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows.msi    # [win]
-  sha256: 0c0b4ce8e86ca4c66a86bd40faf75b2c03b1b5aaa27b4d369e2b3dec111c5210                               # [win]
+  sha256: e8a5b53b01bc9c5b31da724e4bb33d3f1f72b080bff6204191096176a929c978
 
 build:
    number: 0
