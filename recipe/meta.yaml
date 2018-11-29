@@ -6,8 +6,8 @@ package:
 
 source:
   fn: pandoc.deb  # [linux]
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-1-amd64.deb  # [linux64]
-  sha256: 56c6bd9613818c71594052d676d898dbb88580b266ec98f1becf9a97bac7aa37  # [linux64]
+  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-1-amd64.deb  # [linux]
+  sha256: 56c6bd9613818c71594052d676d898dbb88580b266ec98f1becf9a97bac7aa37  # [linux]
 
   fn: pandoc.pkg  # [osx]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.pkg  # [osx]
@@ -22,8 +22,8 @@ build:
 
 requirements:
   run:
-    - gmp  # [linux64]
-    - zlib  # [linux64]
+    - gmp  # [linux]
+    - zlib  # [linux]
 
 test:
   commands:
