@@ -22,8 +22,8 @@ build:
 test:
   commands:
     - type pandoc  # [osx]
-    - pandoc --help
     - pandoc --version
+    - pandoc --help
 
 about:
   home: http://pandoc.org/
