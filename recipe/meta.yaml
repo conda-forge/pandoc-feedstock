@@ -17,10 +17,11 @@ source:
   sha256: f92bb25f61ef39c2e6ae4fc36eec3575494609429b2690cd99eab3eb00594e19  # [win]
 
 build:
-   number: 0
+   number: 1
 
 test:
   commands:
+    - type pandoc  # [osx]
     - pandoc --help
     - pandoc --version
 
