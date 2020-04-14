@@ -1,4 +1,4 @@
-{% set version = "2.9.2" %}
+{% set version = "2.9.2.1" %}
 
 package:
   name: pandoc
@@ -6,30 +6,35 @@ package:
 
 source:
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]
-  sha256: 039f155b6166c1e268479bcb06af2dba99eb7795cbff7b3c13b4875388195d08  # [linux64]
+  sha256: 5b61a981bd2b7d48c1b4ba5788f1386631f97e2b46d0d1f1a08787091b4b0cf8  # [linux64]
 
-  fn: pandoc.pkg  # [osx]
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.pkg  # [osx]
-  sha256: 23b15416a4a1c2c64b5dbc4f23c480b11feb34dcf38a65f6346dc8faa7feab0b  # [osx]
+  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.zip  # [osx]
+  sha256: c4847f7a6e6a02a7d1b8dc17505896d8a6e4c2ee9e8b325e47a0468036675307  # [osx]
 
   fn: pandoc.msi  # [win]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]
-  sha256: f92bb25f61ef39c2e6ae4fc36eec3575494609429b2690cd99eab3eb00594e19  # [win]
+  sha256: 9c9f5fbde483519bb4cc55df9ec54b537ce30593c45abdc7e7426a4ee5e229e4  # [win]
 
 build:
-   number: 0
+  number: 0
+  binary_relocation: False  # [osx]
+  missing_dso_whitelist:
+    - /usr/lib/libiconv.2.dylib  # [osx]
+    - /usr/lib/libz.1.dylib  # [osx]
+    - /usr/lib/libcharset.1.dylib  # [osx]
 
 test:
   commands:
-    - pandoc --help
+    - type pandoc  # [osx]
     - pandoc --version
+    - pandoc --help
 
 about:
   home: http://pandoc.org/
   license: GPL-2.0
   license_family: GPL
   license_file: LICENSE
-  summary: 'Universal markup converter (repackaged binaries)'
+  summary: Universal markup converter (repackaged binaries)
 
 extra:
   recipe-maintainers:
