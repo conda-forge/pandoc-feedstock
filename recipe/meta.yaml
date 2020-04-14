@@ -17,11 +17,11 @@ source:
 
 build:
   number: 0
-  binary_relocation: False   # [osx]
+  binary_relocation: False  # [osx]
   missing_dso_whitelist:
-    - /usr/lib/libiconv.2.dylib
-    - /usr/lib/libz.1.dylib
-    - /usr/lib/libcharset.1.dylib
+    - /usr/lib/libiconv.2.dylib  # [osx]
+    - /usr/lib/libz.1.dylib  # [osx]
+    - /usr/lib/libcharset.1.dylib  # [osx]
 
 test:
   commands:
