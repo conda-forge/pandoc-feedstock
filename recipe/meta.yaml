@@ -1,4 +1,4 @@
-{% set version = "2.9.2.1" %}
+{% set version = "2.10" %}
 
 package:
   name: pandoc
@@ -6,18 +6,18 @@ package:
 
 source:
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]
-  sha256: 5b61a981bd2b7d48c1b4ba5788f1386631f97e2b46d0d1f1a08787091b4b0cf8  # [linux64]
+  sha256: adc2f0355f3225cd9ea131e81c5c36c40ff92e2221920d45287f099d336f9cc6  # [linux64]
 
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.zip  # [osx]
-  sha256: c4847f7a6e6a02a7d1b8dc17505896d8a6e4c2ee9e8b325e47a0468036675307  # [osx]
+  sha256: 5def6e20968952d08aa742e9bcfca7feda2f0d314695053647f76db3dc27d4a9  # [osx]
 
   fn: pandoc.msi  # [win]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]
-  sha256: 9c9f5fbde483519bb4cc55df9ec54b537ce30593c45abdc7e7426a4ee5e229e4  # [win]
+  sha256: fd469452fc5c0dddf5f4e5b1e0f6e6846c281dd6eb7e56933c69d03eb43b33ef  # [win]
 
 build:
   number: 0
-  binary_relocation: False  # [osx]
+  binary_relocation: false  # [osx]
   missing_dso_whitelist:
     - /usr/lib/libiconv.2.dylib  # [osx]
     - /usr/lib/libz.1.dylib  # [osx]
