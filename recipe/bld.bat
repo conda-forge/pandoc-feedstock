@@ -1,5 +1,7 @@
-msiexec /a pandoc.msi /qb TARGETDIR=%TEMP% || exit 1
+stack setup
 
-if not exist %LIBRARY_BIN% mkdir %LIBRARY_BIN% || exit 1
+stack install
 
-copy %TEMP%\Pandoc\*.exe %LIBRARY_BIN% || exit 1
+REM if not exist %LIBRARY_BIN% mkdir %LIBRARY_BIN% || exit 1
+
+REM copy %TEMP%\Pandoc\*.exe %LIBRARY_BIN% || exit 1
