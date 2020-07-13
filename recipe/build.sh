@@ -1,6 +1,8 @@
 #!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
+#set -euo pipefail
+#IFS=$'\n\t'
 
-mkdir -p ${PREFIX}/bin
-mv bin/* ${PREFIX}/bin
+#mkdir -p ${PREFIX}/bin
+#mv bin/* ${PREFIX}/bin
+stack setup
+stack install

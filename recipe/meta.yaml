@@ -5,23 +5,32 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]
-  sha256: adc2f0355f3225cd9ea131e81c5c36c40ff92e2221920d45287f099d336f9cc6  # [linux64]
-
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.zip  # [osx]
-  sha256: 5def6e20968952d08aa742e9bcfca7feda2f0d314695053647f76db3dc27d4a9  # [osx]
-
-  fn: pandoc.msi  # [win]
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]
-  sha256: fd469452fc5c0dddf5f4e5b1e0f6e6846c281dd6eb7e56933c69d03eb43b33ef  # [win]
+  url: https://github.com/jgm/pandoc/archive/{{ version }}.tar.gz
+  sha256: 7efa5951df06d4eab29add81544e31df0a5c7a11fb82c87c8e4bf0f13b0a99f5
+    # or use https://hackage.haskell.org/package/pandoc-{{ version }}/pandoc-{{ version }}.tar.gz
 
 build:
   number: 0
-  binary_relocation: false  # [osx]
-  missing_dso_whitelist:
-    - /usr/lib/libiconv.2.dylib  # [osx]
-    - /usr/lib/libz.1.dylib  # [osx]
-    - /usr/lib/libcharset.1.dylib  # [osx]
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - stack
+    #binary_relocation: falsdie  # [osx]
+    #missing_dso_whitelist:
+    #- /usr/lib/libiconv.2.dylib  # [osx]
+    #- /usr/lib/libz.1.dylib  # [osx]
+    #- /usr/lib/libcharset.1.dylib  # [osx]
+  host:
+    # fix reqs
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - stack
+    - python
+  run:
+    # fix reqs
+    - python
 
 test:
   commands:
