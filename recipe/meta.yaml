@@ -43,7 +43,7 @@ about:
   license: GPL-2.0
   license_family: GPL
   license_file: LICENSE
-  summary: Universal markup converter (repackaged binaries)
+  summary: Universal markup converter
 
 extra:
   recipe-maintainers:
