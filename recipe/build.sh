@@ -1,7 +1,7 @@
 #!/bin/bash
 #set -euo pipefail
 #IFS=$'\n\t'
-
+echo ${PREFIX}
 #mkdir -p ${PREFIX}/bin
 #mv bin/* ${PREFIX}/bin
 #stack setup
@@ -11,4 +11,3 @@ cabal --version
 cabal install cabal-install
 cabal install
 mkdir -p ${PREFIX}/bin
-mv ${HOME}/.local/bin/* ${PREFIX}/bin
