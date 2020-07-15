@@ -8,5 +8,5 @@ stack setup
 stack install
 
 echo ${PREFIX}
-#mkdir -p ${PREFIX}/bin
-#mv bin/* ${PREFIX}/bin
+mkdir -p ${PREFIX}/bin
+mv ${HOME}/.local/bin/* ${PREFIX}/bin
