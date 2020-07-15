@@ -3,7 +3,6 @@
 package:
   name: pandoc
   version: {{ version }}  # [not ppc64le]
-  version: 2.2.1  # [ppc64le]
 
 source:
   url: https://github.com/jgm/pandoc/archive/{{ version }}.tar.gz
