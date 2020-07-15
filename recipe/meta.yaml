@@ -2,7 +2,8 @@
 
 package:
   name: pandoc
-  version: {{ version }}
+  version: {{ version }}  # [not ppc64le]
+  version: 2.2.1  # [ppc64le]
 
 source:
   url: https://github.com/jgm/pandoc/archive/{{ version }}.tar.gz
@@ -18,11 +19,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - stack
-    #binary_relocation: falsdie  # [osx]
-    #missing_dso_whitelist:
-    #- /usr/lib/libiconv.2.dylib  # [osx]
-    #- /usr/lib/libz.1.dylib  # [osx]
-    #- /usr/lib/libcharset.1.dylib  # [osx]
   host:
     # fix reqs
     - {{ compiler('c') }}
@@ -45,6 +41,12 @@ about:
   license_family: GPL
   license_file: LICENSE
   summary: Universal markup converter
+  description: |
+    Pandoc is a Haskell library for converting from one markup format to
+    another, and a command-line tool that uses this library.
+  doc_url: http://pandoc.org/MANUAL.html
+  dev_url: https://github.com/jgm/pandoc
+  doc_source_url: https://github.com/jgm/pandoc/tree/master/doc
 
 extra:
   recipe-maintainers:
