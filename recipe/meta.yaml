@@ -21,7 +21,8 @@ source:
   sha256: 5a9818493f8b14821c5fb44234c898f776faf011089dc77e1dcf6ba3e51e0a81  # [ppc64le]
 
 build:
-  number: 0
+  number: 0  # [ppc64le]
+  number: 1  # [not ppc64le]
   binary_relocation: false  # [osx]
   missing_dso_whitelist:
     - /usr/lib/libiconv.2.dylib  # [osx]
