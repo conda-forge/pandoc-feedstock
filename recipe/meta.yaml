@@ -34,7 +34,10 @@ build:
 requirements:
   build:
     - patchelf
-    - {{ compiler('c') }}
+    # we do not actually need a compiler but want the
+    # sysroot for link checking and the run_exports
+    # avoid {{ compiler('c') }} which adds unneeded hashes on all platforms
+    - gcc_linux-ppc64le
   host:
     - gmp 6.1.2
     - zlib 1.2.11
