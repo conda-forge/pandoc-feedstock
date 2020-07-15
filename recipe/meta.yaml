@@ -53,7 +53,7 @@ test:
 
 about:
   home: http://pandoc.org/
-  license: GPL-2.0
+  license: GPL-2.0-or-later
   license_family: GPL
   license_file: LICENSE
   summary: Universal markup converter (repackaged binaries)
