@@ -34,7 +34,6 @@ build:
 {% if ARCH == "ppc64le" %}
 requirements:
   build:
-    - patchelf
     # we do not actually need a compiler but want the
     # sysroot for link checking and the run_exports
     # avoid {{ compiler('c') }} which adds unneeded hashes on all platforms
@@ -42,7 +41,7 @@ requirements:
   host:
     - gmp 6.1.2
     - zlib 1.2.11
-    - libffi 3.3
+    - libffi 3.2
 {% endif %}
 
 test:
