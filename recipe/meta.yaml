@@ -17,7 +17,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - stack
+    - ghc 
     #binary_relocation: falsdie  # [osx]
     #missing_dso_whitelist:
     #- /usr/lib/libiconv.2.dylib  # [osx]
@@ -28,6 +28,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - stack
+    - ghc
     - python
   run:
     # fix reqs
