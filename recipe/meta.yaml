@@ -5,9 +5,8 @@ package:
   version: {{ version }}  # [not ppc64le]
 
 source:
-  url: https://github.com/jgm/pandoc/archive/{{ version }}.tar.gz
-  sha256: 7efa5951df06d4eab29add81544e31df0a5c7a11fb82c87c8e4bf0f13b0a99f5
-    # or use https://hackage.haskell.org/package/pandoc-{{ version }}/pandoc-{{ version }}.tar.gz
+  url:  https://hackage.haskell.org/package/pandoc-{{ version }}/pandoc-{{ version }}.tar.g
+  sha256: 938a4c9b0a7ed3de886c73af4052913b0ac9e4aa12b435bd2afd09670bd3229a
 
 build:
   number: 0
