@@ -16,7 +16,12 @@ ghc --version
 #stack install
 cabal update
 cabal --version
-cabal install cabal-install
+cabal configure --prefix=$(BUILD_PREFIX) 
+#--bindir=DIR --libdir=DIR \
+#  --datadir=DIR --libsubdir=DIR --datasubdir=DIR --docdir=DIR \
+#  --htmldir=DIR --program-prefix=PREFIX --program-suffix=SUFFIX \
+#  --mandir=DIR --flags=FLAGSPEC --enable-tests
+#cabal install cabal-install
 cabal install
 
 mkdir -p ${PREFIX}/bin
