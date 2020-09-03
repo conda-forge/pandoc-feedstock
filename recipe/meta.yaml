@@ -3,7 +3,6 @@
 package:
   name: pandoc
   version: {{ version }}  # [not ppc64le]
-  version: 2.2.1  # [ppc64le]
 
 source:
   url: https://github.com/jgm/pandoc/archive/{{ version }}.tar.gz
@@ -12,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [linux]
+  skip: true  # [win or osx or ppc64le]
 
 requirements:
   build:
@@ -35,19 +34,6 @@ requirements:
     # fix reqs
     - python
 
-# The pandoc binary from the RPM depends on libgmp, libz and libffi and system libraries.
-# Add these as host requirements to pick up the correct run_exports
-{% if ARCH == "ppc64le" %}
-requirements:
-  build:
-    - patchelf
-    - {{ compiler('c') }}
-  host:
-    - gmp 6.1.2
-    - zlib 1.2.11
-    - libffi 3.3
-{% endif %}
-
 test:
   commands:
     - type pandoc  # [osx]
@@ -59,7 +45,7 @@ about:
   license: GPL-2.0
   license_family: GPL
   license_file: LICENSE
-  summary: Universal markup converter (repackaged binaries)
+  summary: Universal markup converter
   description: |
     Pandoc is a Haskell library for converting from one markup format to
     another, and a command-line tool that uses this library.
@@ -73,3 +59,4 @@ extra:
     - ocefpaf
     - dhimmel
     - kiwi0fruit
+    - step21
