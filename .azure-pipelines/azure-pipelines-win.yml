@@ -8,10 +8,6 @@ jobs:
     vmImage: vs2017-win2016
   strategy:
     matrix:
-<<<<<<< HEAD
-      win_64_target_platformwin-64:
-        CONFIG: win_64_target_platformwin-64
-=======
       win_64_python3.6.____cpython:
         CONFIG: win_64_python3.6.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -20,7 +16,6 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       win_64_python3.8.____cpython:
         CONFIG: win_64_python3.8.____cpython
->>>>>>> MNT: Re-rendered with conda-build 3.20.0, conda-smithy 3.7.10, and conda-forge-pinning 2020.09.02.16.41.07
         UPLOAD_PACKAGES: 'True'
     maxParallel: 4
   timeoutInMinutes: 360

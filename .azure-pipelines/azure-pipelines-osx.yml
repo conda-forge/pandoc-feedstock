@@ -8,10 +8,6 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-<<<<<<< HEAD
-      osx_64_target_platformosx-64:
-        CONFIG: osx_64_target_platformosx-64
-=======
       osx_64_python3.6.____cpython:
         CONFIG: osx_64_python3.6.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -20,7 +16,6 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       osx_64_python3.8.____cpython:
         CONFIG: osx_64_python3.8.____cpython
->>>>>>> MNT: Re-rendered with conda-build 3.20.0, conda-smithy 3.7.10, and conda-forge-pinning 2020.09.02.16.41.07
         UPLOAD_PACKAGES: 'True'
     maxParallel: 8
   timeoutInMinutes: 360

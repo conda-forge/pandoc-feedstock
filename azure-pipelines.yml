@@ -3,16 +3,5 @@
 # -*- mode: yaml -*-
 
 jobs:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - template: ./.azure-pipelines/azure-pipelines-linux.yml
   - template: ./.azure-pipelines/azure-pipelines-win.yml
   - template: ./.azure-pipelines/azure-pipelines-osx.yml
-=======
-  - template: ./.azure-pipelines/azure-pipelines-osx.yml
-  - template: ./.azure-pipelines/azure-pipelines-win.yml
->>>>>>> MNT: Re-rendered with conda-build 3.18.12, conda-smithy 3.7.4, and conda-forge-pinning 2020.07.15.18.18.04
-=======
-  - template: ./.azure-pipelines/azure-pipelines-win.yml
-  - template: ./.azure-pipelines/azure-pipelines-osx.yml
->>>>>>> MNT: Re-rendered with conda-build 3.20.0, conda-smithy 3.7.10, and conda-forge-pinning 2020.09.02.16.41.07
