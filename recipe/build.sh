@@ -9,6 +9,7 @@ ls $SRC_PREFIX
 echo "----------------\n"
 ls $BUILD_PREFIX/lib/ghc-8.2.2/include
 echo "----------------\n"
+ghc --version
 #mkdir -p ${PREFIX}/bin
 #mv bin/* ${PREFIX}/bin
 #stack setup
