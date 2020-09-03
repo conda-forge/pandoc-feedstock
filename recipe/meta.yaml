@@ -18,6 +18,7 @@ requirements:
     - {{ compiler('cxx') }}
     - ghc
     - cabal
+    - zlib
     #binary_relocation: falsdie  # [osx]
     #missing_dso_whitelist:
     #- /usr/lib/libiconv.2.dylib  # [osx]
@@ -28,6 +29,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - ghc
+    - zlib
     - cabal
     - python
   run:
