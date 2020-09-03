@@ -16,13 +16,16 @@ ghc --version
 #stack install
 cabal update
 cabal --version
-cabal configure --prefix=$(BUILD_PREFIX) 
+cabal configure --prefix=$(BUILD_PREFIX) -fembed_data_files
+cabal build
 #--bindir=DIR --libdir=DIR \
 #  --datadir=DIR --libsubdir=DIR --datasubdir=DIR --docdir=DIR \
 #  --htmldir=DIR --program-prefix=PREFIX --program-suffix=SUFFIX \
 #  --mandir=DIR --flags=FLAGSPEC --enable-tests
 #cabal install cabal-install
-cabal install
+#cabal install
+#cabal copy --destdir=PATH
+cabal register --gen-script
 
 mkdir -p ${PREFIX}/bin
 mv ${HOME}/.local/bin/* ${PREFIX}/bin
