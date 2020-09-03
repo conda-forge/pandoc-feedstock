@@ -8,18 +8,19 @@ channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
+cxx_compiler:
+- clangxx
+cxx_compiler_version:
+- '10'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
 - '10.9'
-<<<<<<< HEAD:.ci_support/osx_64_target_platformosx-64.yaml
-=======
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.6.* *_cpython
->>>>>>> MNT: Re-rendered with conda-build 3.20.0, conda-smithy 3.7.10, and conda-forge-pinning 2020.09.02.16.41.07:.ci_support/osx_64_python3.6.____cpython.yaml
+- 3.8.* *_cpython
 target_platform:
 - osx-64
