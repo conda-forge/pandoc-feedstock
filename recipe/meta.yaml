@@ -17,7 +17,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - ghc
-    - cabal
+    - cabal  # [not aarch64]
     - zlib
     #binary_relocation: falsdie  # [osx]
     #missing_dso_whitelist:
@@ -30,7 +30,7 @@ requirements:
     - {{ compiler('cxx') }}
     - ghc
     - zlib
-    - cabal
+    - cabal  # [not aarch64]
     - python
   run:
     # fix reqs

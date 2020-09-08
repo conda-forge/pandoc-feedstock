@@ -14,10 +14,10 @@ ghc --version
 #mv bin/* ${PREFIX}/bin
 #stack setup
 #stack install
-cabal update
+cabal v2-update
 cabal --version
-cabal configure --prefix=$(BUILD_PREFIX) -fembed_data_files
-cabal build
+cabal v2-configure --prefix=$(BUILD_PREFIX) -fembed_data_files
+cabal v2-build
 #--bindir=DIR --libdir=DIR \
 #  --datadir=DIR --libsubdir=DIR --datasubdir=DIR --docdir=DIR \
 #  --htmldir=DIR --program-prefix=PREFIX --program-suffix=SUFFIX \
