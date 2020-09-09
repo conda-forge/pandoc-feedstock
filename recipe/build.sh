@@ -16,6 +16,7 @@ ghc --version
 #stack install
 cabal v2-update
 cabal --version
+cabal install cabal-install
 cabal v2-configure --prefix=$(BUILD_PREFIX) -fembed_data_files
 cabal v2-build
 #--bindir=DIR --libdir=DIR \
