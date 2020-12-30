@@ -1,4 +1,4 @@
-{% set version = "2.11.3.1" %}
+{% set version = "2.11.3.2" %}
 
 package:
   name: pandoc
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]
-  sha256: 848fd7e6ccfe8a8d5a9ff81ea9b6a3024e8d0e8da6365d304584d93b87da8996  # [linux64]
+  sha256: 422c1f38b4731edfafcc0f8011a8dc46ce3a84e61b896ef15e3a23e0a9b453d6  # [linux64]
 
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.zip  # [osx]
-  sha256: fd271c322f718be7cd919dc7e0ce0f26c14662e37a3f5cb4df818653313fd361  # [osx]
+  sha256: 24487d8d495b3c126126559fe15617b21353b9356ee6dc41176fc931c1615a7a  # [osx]
 
   fn: pandoc.msi  # [win]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]
-  sha256: f86e4b0595f5776621d99fb58fecd5e4c86e19297040cf3210c9490b14460da9  # [win]
+  sha256: 35f321b612fb2beb0abd174a413adb2ab54f72fc1729f002ee045d4fec212de6  # [win]
 
   # repackage the RPM built for EPEL
   url: https://copr-be.cloud.fedoraproject.org/results/petersen/pandoc/epel-7-ppc64le/00770404-pandoc/pandoc-2.2.1-1.el7.ppc64le.rpm  # [ppc64le]
