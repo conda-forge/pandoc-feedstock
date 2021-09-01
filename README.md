@@ -160,6 +160,3 @@ Feedstock Maintainers
 * [@kiwi0fruit](https://github.com/kiwi0fruit/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 
-
-<!-- dummy commit to enable rerendering -->
-
