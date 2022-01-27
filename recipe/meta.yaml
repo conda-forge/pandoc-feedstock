@@ -40,7 +40,6 @@ about:
     another, and a command-line tool that uses this library.
   doc_url: http://pandoc.org/MANUAL.html
   dev_url: https://github.com/jgm/pandoc
-  doc_source_url: https://github.com/jgm/pandoc/blob/master/MANUAL.txt
 
 extra:
   recipe-maintainers:
