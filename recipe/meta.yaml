@@ -2,8 +2,7 @@
 
 package:
   name: pandoc
-  version: {{ version }}  # [not ppc64le]
-  version: 2.2.1  # [ppc64le]
+  version: {{ version }}
 
 source:
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]
@@ -16,10 +15,6 @@ source:
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]
   sha256: 16265e7d0f04b3f8864f447d7692544ce7b1efeb0aa13a5f89f5026683a428d2  # [win]
 
-  # repackage the RPM built for EPEL
-  url: https://copr-be.cloud.fedoraproject.org/results/petersen/pandoc/epel-7-ppc64le/00770404-pandoc/pandoc-2.2.1-1.el7.ppc64le.rpm  # [ppc64le]
-  sha256: 5a9818493f8b14821c5fb44234c898f776faf011089dc77e1dcf6ba3e51e0a81  # [ppc64le]
-
 build:
   number: 0
   binary_relocation: false  # [osx]
@@ -27,19 +22,6 @@ build:
     - /usr/lib/libiconv.2.dylib  # [osx]
     - /usr/lib/libz.1.dylib  # [osx]
     - /usr/lib/libcharset.1.dylib  # [osx]
-
-# The pandoc binary from the RPM depends on libgmp, libz and libffi and system libraries.
-# Add these as host requirements to pick up the correct run_exports
-{% if ARCH == "ppc64le" %}
-requirements:
-  build:
-    - patchelf
-    - {{ compiler('c') }}
-  host:
-    - gmp 6.1.2
-    - zlib 1.2.11
-    - libffi 3.3
-{% endif %}
 
 test:
   commands:
