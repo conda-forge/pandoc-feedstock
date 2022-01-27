@@ -3,11 +3,11 @@ About pandoc
 
 Home: http://pandoc.org/
 
-Package license: GPL-2.0
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pandoc-feedstock/blob/master/LICENSE.txt)
 
-Summary: Universal markup converter (repackaged binaries)
+Summary: The universal markup converter (repackaged binaries)
 
 Development: https://github.com/jgm/pandoc
 
@@ -157,6 +157,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@ickc](https://github.com/ickc/)
 * [@jankatins](https://github.com/jankatins/)
 * [@kiwi0fruit](https://github.com/kiwi0fruit/)
 * [@ocefpaf](https://github.com/ocefpaf/)

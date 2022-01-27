@@ -49,19 +49,20 @@ test:
 
 about:
   home: http://pandoc.org/
-  license: GPL-2.0
+  license: GPL-2.0-or-later
   license_family: GPL
-  license_file: LICENSE
-  summary: Universal markup converter (repackaged binaries)
+  license_file: COPYRIGHT
+  summary: The universal markup converter (repackaged binaries)
   description: |
     Pandoc is a Haskell library for converting from one markup format to
     another, and a command-line tool that uses this library.
   doc_url: http://pandoc.org/MANUAL.html
   dev_url: https://github.com/jgm/pandoc
-  doc_source_url: https://github.com/jgm/pandoc/tree/master/doc
+  doc_source_url: https://github.com/jgm/pandoc/blob/master/MANUAL.txt
 
 extra:
   recipe-maintainers:
     - jankatins
     - ocefpaf
     - kiwi0fruit
+    - ickc
