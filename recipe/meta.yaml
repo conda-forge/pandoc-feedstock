@@ -8,6 +8,9 @@ source:
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]
   sha256: 108cf440a9111de27212e1b6f8459a211c414e3173ddfc07b65703cb39a66f09  # [linux64]
 
+  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-arm64.tar.gz  # [aarch64]
+  sha256: 2551e2549fb9e2cdb66aec0e044938b608cff1afbff694094c52fb2dd2e051d4  # [aarch64]
+
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.zip  # [osx]
   sha256: e72d2e22b15ee77a0727b35692a0f0582982874fb38dee5c25380af0c1b801c0  # [osx]
 
@@ -16,7 +19,7 @@ source:
   sha256: 16265e7d0f04b3f8864f447d7692544ce7b1efeb0aa13a5f89f5026683a428d2  # [win]
 
 build:
-  number: 0
+  number: 1
   binary_relocation: false  # [osx]
   missing_dso_whitelist:
     - /usr/lib/libiconv.2.dylib  # [osx]
