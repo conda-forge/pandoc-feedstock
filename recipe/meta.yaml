@@ -1,4 +1,4 @@
-{% set version = "2.17.1" %}
+{% set version = "2.17.1.1" %}
 
 package:
   name: pandoc
@@ -6,17 +6,17 @@ package:
 
 source:
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]
-  sha256: 94def8f3e54c3939d822f02461f5dad1e9083800308f73c104c9dbee0751458f  # [linux64]
+  sha256: bce0609dfe196784fe0300fb6847a2a246391a5b98e0490e5f7eadb78afb0d74  # [linux64]
 
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-arm64.tar.gz  # [aarch64]
-  sha256: 562625b747327636ac69d5e798da557bd16b97e7d9a0754c3a7d7b42fc82d64e  # [aarch64]
+  sha256: a6821d6e101636af24f0f4b8a732b4e91595c0a411e3cf7756dee37a59515160  # [aarch64]
 
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.zip  # [osx]
-  sha256: 1198455e8b0743d4c84ba9c9e81c946148e2d78f8016a602b52d20ffba1be9c8  # [osx]
+  sha256: 6a2d0173805c3358b26e3f8c64d66e9bb67429b188e4b224b6ff1b8fa098b7e2  # [osx]
 
   fn: pandoc.msi  # [win]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]
-  sha256: 8134e589bddb8c53a92d341286814b7fd4d8f1b160475390328cbe9ecaec9287  # [win]
+  sha256: 3d7ae712c6a007633c2285e5e1680858b1cc13e2b9c9e77c57a075f5c14f48b9  # [win]
 
 build:
   number: 0
