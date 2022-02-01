@@ -22,7 +22,7 @@ Current build status
 
 
 <table>
-    
+
   <tr>
     <td>Azure</td>
     <td>
@@ -164,8 +164,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@ickc](https://github.com/ickc/)
 * [@jankatins](https://github.com/jankatins/)
 * [@kiwi0fruit](https://github.com/kiwi0fruit/)
 * [@ocefpaf](https://github.com/ocefpaf/)
-
