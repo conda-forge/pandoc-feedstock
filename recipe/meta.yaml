@@ -19,6 +19,8 @@ build:
 requirements:
   build:
     - stack
+  host:
+    - zlib  # [linux]
 
 test:
   commands:
