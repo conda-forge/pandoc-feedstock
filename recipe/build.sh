@@ -1,6 +1,3 @@
-#!/bin/bash
-set -euo pipefail
-IFS=$'\n\t'
-
+stack install pandoc
 mkdir -p ${PREFIX}/bin
-mv bin/* ${PREFIX}/bin
+mv ~/.local/bin/pandoc ${PREFIX}/bin

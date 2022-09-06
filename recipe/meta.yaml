@@ -5,26 +5,15 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux64]
-  sha256: 9d55c7afb6a244e8a615451ed9cb02e6a6f187ad4d169c6d5a123fa74adb4830  # [linux64]
-
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-arm64.tar.gz  # [aarch64]
-  sha256: 43f364915b9da64905fc3f6009f5542f224e54fb24f71043ef5154540f1a3983  # [aarch64]
-
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-macOS.zip  # [osx]
-  sha256: af0cda69e31e42f01ba6adc0aa779d3e5853e6c092beeb420a4fc22712d2110b  # [osx]
-
-  fn: pandoc.msi  # [win]
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.msi  # [win]
-  sha256: 7d543e03466eb618269ae9e49f1794ddd73860da180f3acea53b0f5f97350259  # [win]
+  url: https://github.com/jgm/pandoc/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 5cebed5bfa8daa8c3f7ba0c29b0c84b36fd279bdcd25891d3ae9843fa2c98592
 
 build:
   number: 0
-  binary_relocation: false  # [osx]
-  missing_dso_whitelist:
-    - /usr/lib/libiconv.2.dylib  # [osx]
-    - /usr/lib/libz.1.dylib  # [osx]
-    - /usr/lib/libcharset.1.dylib  # [osx]
+
+requirements:
+  build:
+    - stack
 
 test:
   commands:
@@ -37,7 +26,7 @@ about:
   license: GPL-2.0-or-later
   license_family: GPL
   license_file: COPYRIGHT
-  summary: The universal markup converter (repackaged binaries)
+  summary: The universal markup converter
   description: |
     Pandoc is a Haskell library for converting from one markup format to
     another, and a command-line tool that uses this library.
