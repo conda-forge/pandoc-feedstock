@@ -7,7 +7,7 @@ Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pandoc-feedstock/blob/main/LICENSE.txt)
 
-Summary: The universal markup converter (repackaged binaries)
+Summary: The universal markup converter
 
 Development: https://github.com/jgm/pandoc
 
