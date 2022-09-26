@@ -13,10 +13,6 @@ source:
 
 build:
   number: 1
-  script_env:
-    - GHC_OPTIONS=-fdiagnostics-color=always -j4 +RTS -A8m -RTS  # [linux]
-    - GHC_OPTIONS=-j4 +RTS -A256m -RTS -split-sections  # [osx]
-    - GHC_OPTIONS=-j4 +RTS -A256m -RTS  # [win]
   binary_relocation: false  # [osx]
   missing_dso_whitelist:
     - /usr/lib/libiconv.2.dylib  # [osx]
