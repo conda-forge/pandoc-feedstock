@@ -5,6 +5,7 @@ if [[ "$target_platform" == linux-* ]]; then
 elif [[ "$target_platform" == osx-* ]]; then
     # ghc-options taken from https://github.com/jgm/pandoc/blob/2.19.2/.github/workflows/release-candidate.yml#L100
     export GHC_OPTIONS="-j4 +RTS -A256m -RTS -split-sections"
+fi
 if [[ "$target_platform" == linux-aarch64 ]]; then
     mv bin/* ${PREFIX}/bin
 else
