@@ -7,7 +7,7 @@ Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pandoc-feedstock/blob/main/LICENSE.txt)
 
-Summary: The universal markup converter (repackaged binaries)
+Summary: The universal markup converter
 
 Development: https://github.com/jgm/pandoc
 
@@ -53,6 +53,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4456&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pandoc-feedstock?branchName=main&jobName=osx&configuration=osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4456&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pandoc-feedstock?branchName=main&jobName=osx&configuration=osx_arm64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
