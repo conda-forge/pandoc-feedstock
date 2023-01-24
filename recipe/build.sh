@@ -1,5 +1,4 @@
 mkdir -p ${PREFIX}/bin
-stack setup
 if [[ "$target_platform" == linux-aarch64 ]]; then
     mv bin/* ${PREFIX}/bin
 else
