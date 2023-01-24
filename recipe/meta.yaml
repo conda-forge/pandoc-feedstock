@@ -22,6 +22,10 @@ build:
 requirements:
   build:
     - stack  # [not aarch64]
+    # For MacOS, pkg-config and zlib need to be installed separately. 
+    # See https://github.com/jgm/pandoc/issues/8550
+    - pkg-config  # [osx]
+    - zlib  # [osx]
   host:
     - zlib  # [linux and not aarch64]
 
