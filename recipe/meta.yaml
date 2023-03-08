@@ -25,6 +25,7 @@ requirements:
     - stack  # [not aarch64]
   host:
     - zlib  # [linux and not aarch64]
+    - zlib  # [osx]
 
 test:
   commands:
