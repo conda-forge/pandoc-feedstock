@@ -9,7 +9,7 @@ else
         # ghc-options taken from https://github.com/jgm/pandoc/blob/2.19.2/.github/workflows/release-candidate.yml#L100
         stack --extra-include-dirs ${PREFIX}/include --extra-lib-dirs ${PREFIX}/lib install --ghc-options='-j4 +RTS -A256m -RTS -split-sections' pandoc-cli
     else
-        stack --extra-include-dirs ${PREFIX}/include --extra-lib-dirs ${PREFIX}/lib install pandoc
+        stack --extra-include-dirs ${PREFIX}/include --extra-lib-dirs ${PREFIX}/lib install pandoc-cli
     fi
     mv ~/.local/bin/pandoc ${PREFIX}/bin
 fi
