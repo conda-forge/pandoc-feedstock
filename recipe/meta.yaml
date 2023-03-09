@@ -24,6 +24,7 @@ requirements:
     - pkg-config  # [osx]
     - stack  # [not aarch64]
   host:
+    - libzlib  # [arm64]
     - zlib  # [linux and not aarch64]
     - zlib  # [osx]
 
