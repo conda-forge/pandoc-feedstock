@@ -12,6 +12,7 @@ source:
   sha256: d5d62bad35a98b5a6c742e413a148b5e28e62b7eb35ba0e08bc828b5cf1cbb54  # [aarch64]
 
 build:
+  skip: true  # [arm64]
   number: 0
   binary_relocation: false  # [osx]
   missing_dso_whitelist:
@@ -24,7 +25,6 @@ requirements:
     - pkg-config  # [osx]
     - stack  # [not aarch64]
   host:
-    - libzlib  # [arm64]
     - zlib  # [linux and not aarch64]
     - zlib  # [osx]
 
