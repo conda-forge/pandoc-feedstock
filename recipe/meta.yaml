@@ -10,9 +10,10 @@ source:
   # repackage for aarch64 until aarch64-build of stack is available, see https://github.com/conda-forge/stack-feedstock/pull/35
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-arm64.tar.gz  # [aarch64]
   sha256: 8ac04ce0aedae38f0c9f64bfe634910378cc326d091092395a2140a7ec819d54  # [aarch64]
+  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-arm64-macOS.tar.gz  # [arm64]
+  sha256: aa0eab6cf10e5d54d255d68f8fae47e08da071565a3d2b8d242be29a8c1f1460  # [arm64]
 
 build:
-  skip: true  # [arm64]
   number: 0
   binary_relocation: false  # [osx]
   missing_dso_whitelist:
@@ -22,11 +23,11 @@ build:
 
 requirements:
   build:
-    - pkg-config  # [osx]
-    - stack  # [not aarch64]
+    - pkg-config  # [osx and not arm64]
+    - stack  # [not aarch64 and not arm64]
   host:
     - zlib  # [linux and not aarch64]
-    - zlib  # [osx]
+    - zlib  # [osx and not arm64]
 
 test:
   commands:
