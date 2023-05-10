@@ -1,5 +1,5 @@
 mkdir -p ${PREFIX}/bin
-if [[ "$target_platform" == linux-aarch64 ]]; then
+if [[ "$target_platform" == linux-aarch64 ]] || [[ "$target_platform" == osx-arm64 ]]; then
     mv bin/* ${PREFIX}/bin
 else
     if [[ "$target_platform" == linux-* ]]; then
