@@ -28,6 +28,9 @@ requirements:
   host:
     - zlib  # [linux and not aarch64]
     - zlib  # [osx and not arm64]
+  run:
+    - gmp  # [linux and not aarch64]
+    - zlib  # [linux and not aarch64]
 
 test:
   commands:
