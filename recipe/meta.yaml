@@ -1,4 +1,4 @@
-{% set version = "3.1.2" %}
+{% set version = "3.1.3" %}
 
 package:
   name: pandoc
@@ -6,15 +6,15 @@ package:
 
 source:
   url: https://github.com/jgm/pandoc/archive/refs/tags/{{ version }}.tar.gz  # [not aarch64]
-  sha256: 7543c31e09ad8ccb2ce381c4039d76823865dc6c3922bfa2ed49367cf0e1fd3b  # [not aarch64]
+  sha256: 694bc9a9b820bcfa54eb9c7c9d92e91b6ca6356a924b66b8c3f5a98b7bdcb2f8  # [not aarch64]
   # repackage for aarch64 until aarch64-build of stack is available, see https://github.com/conda-forge/stack-feedstock/pull/35
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-arm64.tar.gz  # [aarch64]
-  sha256: 8ac04ce0aedae38f0c9f64bfe634910378cc326d091092395a2140a7ec819d54  # [aarch64]
+  sha256: 8c57ceb8e948d264cdd1269f5141de966a1f93b1b5099e65cdb92a6fee31f161  # [aarch64]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-arm64-macOS.zip  # [arm64]
-  sha256: aa0eab6cf10e5d54d255d68f8fae47e08da071565a3d2b8d242be29a8c1f1460  # [arm64]
+  sha256: dd33afe7445cf5fb95add881bd11b9dea8e586d6fb30fc3274617b313207f87e  # [arm64]
 
 build:
-  number: 1
+  number: 0
   binary_relocation: false  # [osx]
   missing_dso_whitelist:
     - /usr/lib/libiconv.2.dylib  # [osx]
