@@ -5,11 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/jgm/pandoc/archive/refs/tags/{{ version }}.tar.gz  # [not aarch64]
-  sha256: a9a10a085612879684186fd1031b0410e923fd45017c4494d8801ad3f84a9240  # [not aarch64]
+  url: https://github.com/jgm/pandoc/archive/refs/tags/{{ version }}.tar.gz  # [not aarch64 and not arm64]
+  sha256: ff6a72b125e78b038e2e410028981301a000162f7e7693888b7c131e0f3ee6e8  # [not aarch64 and not arm64]
   # repackage for aarch64 until aarch64-build of stack is available, see https://github.com/conda-forge/stack-feedstock/pull/35
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-arm64.tar.gz  # [aarch64]
-  sha256: 8c57ceb8e948d264cdd1269f5141de966a1f93b1b5099e65cdb92a6fee31f161  # [aarch64]
+  sha256: a9a10a085612879684186fd1031b0410e923fd45017c4494d8801ad3f84a9240  # [aarch64]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-arm64-macOS.zip  # [arm64]
   sha256: 4d4d46815cae811812eb06b2779465b4b9e17532ddd75c912ee560f0be67fc10  # [arm64]
 
