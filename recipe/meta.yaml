@@ -23,7 +23,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('cxx') }} # [linux and not aarch64]
+    - {{ compiler('cxx') }}  # [linux and not aarch64]
     - pkg-config  # [osx and not arm64]
     - stack  # [not aarch64 and not arm64]
   host:
