@@ -15,22 +15,23 @@ source:
 
 build:
   number: 0
-  binary_relocation: false  # [osx]
+  binary_relocation: false         # [osx]
   missing_dso_whitelist:
-    - /usr/lib/libiconv.2.dylib  # [osx]
-    - /usr/lib/libz.1.dylib  # [osx]
+    - /usr/lib/libiconv.2.dylib    # [osx]
+    - /usr/lib/libz.1.dylib        # [osx]
     - /usr/lib/libcharset.1.dylib  # [osx]
 
 requirements:
   build:
-    - pkg-config  # [osx and not arm64]
-    - stack  # [not aarch64 and not arm64]
+    - {{ compiler('cxx') }}  # [linux and not aarch64]
+    - pkg-config             # [osx and not arm64]
+    - stack                  # [not aarch64 and not arm64]
   host:
-    - zlib  # [linux and not aarch64]
-    - zlib  # [osx and not arm64]
+    - zlib                   # [linux and not aarch64]
+    - zlib                   # [osx and not arm64]
   run:
-    - gmp  # [linux and not aarch64]
-    - zlib  # [linux and not aarch64]
+    - gmp                    # [linux and not aarch64]
+    - zlib                   # [linux and not aarch64]
 
 test:
   commands:
