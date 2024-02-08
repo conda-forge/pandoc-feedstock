@@ -1,2 +1,2 @@
 MKDIR %LIBRARY_BIN%
-MOVE "bin\*.* %LIBRARY_BIN%
+MOVE "bin\*.*" %LIBRARY_BIN%
