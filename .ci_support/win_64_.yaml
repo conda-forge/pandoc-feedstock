@@ -4,5 +4,3 @@ channel_targets:
 - conda-forge main
 target_platform:
 - win-64
-zlib:
-- '1.2'
