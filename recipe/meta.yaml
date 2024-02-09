@@ -24,10 +24,6 @@ build:
     - /usr/lib/libz.1.dylib  # [osx]
     - /usr/lib/libcharset.1.dylib  # [osx]
 
-requirements:
-  host:
-    - zlib
-
 test:
   commands:
     - type pandoc  # [osx]
