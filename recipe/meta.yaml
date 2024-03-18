@@ -1,4 +1,4 @@
-{% set version = "3.1.12.2" %}
+{% set version = "3.1.12.3" %}
 
 package:
   name: pandoc
@@ -6,15 +6,15 @@ package:
 
 source:
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux and not aarch64]
-  sha256: 40da725277f7617d045fc761b0375b3ba0990c5d03a908c207fed61b78e34986  # [linux and not aarch64]
+  sha256: f80df137a070e0c05b7f6a3f8f1799124bacf15b57e05890488a7f49f614da09  # [linux and not aarch64]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-arm64.tar.gz  # [linux and aarch64]
-  sha256: 9032b273aec5a1050b2e5f724c8a9dcaf657540c68e44dc477ec9fc38aebc173  # [linux and aarch64]
+  sha256: f80a4fca157f24ae6912cf8bed4b92fa2e5e5c5b98d0a7b675bc8536deb65602  # [linux and aarch64]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-x86_64-macOS.zip  # [osx and not arm64]
-  sha256: f693cc59619053da7a6606ee8ab812664ee033f5efca88da92077c96066fa37b  # [osx and not arm64]
+  sha256: 108c7adc9ffdbfa976eae4f78d33feb9a9b3f1fbb75045306e9ce50f493c6252  # [osx and not arm64]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-arm64-macOS.zip  # [osx and arm64]
-  sha256: 1e651659072743d7304d6891d231707aa9bd783314e35872b94efac1a8978f2d  # [osx and arm64]
+  sha256: 7c67ba6e481a27bcd1dbed3f4de982f2efff6a781c706aee27002e46dee95cce  # [osx and arm64]
   url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.zip  # [win]
-  sha256: 86314bd0e7236f4221473ba54a07ce677bc2e1e96ed5461ad6a556b07234a061  # [win]
+  sha256: 94807fc5cd5ad48272cdf3f0e9e2a3153182246b44e98ba02f3580b4eaeb575e  # [win]
 
 build:
   number: 0
