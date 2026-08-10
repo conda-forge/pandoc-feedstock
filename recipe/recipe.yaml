@@ -1,47 +1,64 @@
-{% set version = "3.10.1" %}
+schema_version: 1
+
+context:
+  version: "3.10.1"
 
 package:
   name: pandoc
-  version: {{ version }}
+  version: ${{ version }}
 
 source:
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-amd64.tar.gz  # [linux and not aarch64]
-  sha256: 72948bf5784f560d5ad1876709daca27e0667f262da727bb33f77b58e52df2f5  # [linux and not aarch64]
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-linux-arm64.tar.gz  # [linux and aarch64]
-  sha256: cd3963da375793a4804c65ae538b4f7b9c23f87cac7f6c74a1cf5e2fff7e8d59  # [linux and aarch64]
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-x86_64-macOS.zip  # [osx and not arm64]
-  sha256: 76430dd0ce5305fc4b91d8c0d5c22a00c8d2197ad3cef3937f65048f087164f7  # [osx and not arm64]
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-arm64-macOS.zip  # [osx and arm64]
-  sha256: 8607160694a70ed9aa63776caa44acef3afb729c379c7c283724b7e27455bfda  # [osx and arm64]
-  url: https://github.com/jgm/pandoc/releases/download/{{ version }}/pandoc-{{ version }}-windows-x86_64.zip  # [win]
-  sha256: 4725a1883e2171c2e181e6fd45003acb59ca4e9cbe031fdd3b79ef0d697d36aa  # [win]
+  - if: linux64
+    then:
+      url: https://github.com/jgm/pandoc/releases/download/${{ version }}/pandoc-${{ version }}-linux-amd64.tar.gz
+      sha256: 72948bf5784f560d5ad1876709daca27e0667f262da727bb33f77b58e52df2f5
+  - if: linux and aarch64
+    then:
+      url: https://github.com/jgm/pandoc/releases/download/${{ version }}/pandoc-${{ version }}-linux-arm64.tar.gz
+      sha256: cd3963da375793a4804c65ae538b4f7b9c23f87cac7f6c74a1cf5e2fff7e8d59
+  - if: osx64
+    then:
+      url: https://github.com/jgm/pandoc/releases/download/${{ version }}/pandoc-${{ version }}-x86_64-macOS.zip
+      sha256: 76430dd0ce5305fc4b91d8c0d5c22a00c8d2197ad3cef3937f65048f087164f7
+  - if: osx and arm64
+    then:
+      url: https://github.com/jgm/pandoc/releases/download/${{ version }}/pandoc-${{ version }}-arm64-macOS.zip
+      sha256: 8607160694a70ed9aa63776caa44acef3afb729c379c7c283724b7e27455bfda
+  - if: win64
+    then:
+      url: https://github.com/jgm/pandoc/releases/download/${{ version }}/pandoc-${{ version }}-windows-x86_64.zip
+      sha256: 4725a1883e2171c2e181e6fd45003acb59ca4e9cbe031fdd3b79ef0d697d36aa
 
 build:
   number: 0
-  binary_relocation: false  # [osx]
-  missing_dso_whitelist:
-    - /usr/lib/libiconv.2.dylib  # [osx]
-    - /usr/lib/libz.1.dylib  # [osx]
-    - /usr/lib/libcharset.1.dylib  # [osx]
+  script: build
+  dynamic_linking:
+    binary_relocation: ${{ false if osx else true }}
+    missing_dso_allowlist:
+      - if: osx
+        then:
+          - /usr/lib/libiconv.2.dylib
+          - /usr/lib/libz.1.dylib
+          - /usr/lib/libcharset.1.dylib
 
-test:
-  commands:
-    - type pandoc  # [osx]
-    - pandoc --version
-    - pandoc --help
+tests:
+  - package_contents:
+      bin:
+        - pandoc
+  - script:
+      - pandoc --version
+      - pandoc --help
 
 about:
-  home: http://pandoc.org/
+  homepage: http://pandoc.org/
+  documentation: http://pandoc.org/MANUAL.html
+  repository: https://github.com/jgm/pandoc
   license: GPL-2.0-or-later
-  license_family: GPL
   license_file: COPYRIGHT
   summary: The universal markup converter
   description: |
     Pandoc is a Haskell library for converting from one markup format to
     another, and a command-line tool that uses this library.
-  doc_url: http://pandoc.org/MANUAL.html
-  dev_url: https://github.com/jgm/pandoc
-  doc_source_url: https://github.com/jgm/pandoc/blob/master/MANUAL.txt
 
 extra:
   recipe-maintainers:
